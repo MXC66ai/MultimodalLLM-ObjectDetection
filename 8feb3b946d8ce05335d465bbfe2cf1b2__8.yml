@@ -1,0 +1,48 @@
+# Dataset / Model parameters
+data_dir: /content/Spike-Driven-Transformer/download  # 假设medmnist数据集存放在这个目录
+dataset: medmnist  # 指定数据集为MedMNIST
+pretrained: False  # 不使用预训练模型
+#num_classes: 9  # pathmnist总共有9个类别
+num_heads: 8  # 如果模型使用多头注意力机制，这里设置头的数量
+
+img_size : 64 # 图像的尺寸784(28*28)
+
+crop_pct: 1.0  # 训练时的中心裁剪比例
+scale:
+    - 1.0
+    - 1.0  # 缩放因子
+ratio: [1.0, 1.0]  # 缩放比例
+color_jitter: 0.  # 颜色抖动
+interpolation: bicubic  # 插值方法
+train_interpolation: bicubic  # 训练时使用的插值方法
+use_conv_as_linear: true  # 是否将卷积层用作线性层
+pooling_stat: "0111"  # 池化层使用的统计方法
+in_channels: 3  # 输入通道数
+time_steps: 10  # 时间步长
+layer: 2  # 网络层数
+dim: 256  # 特征维度
+mlp-ratio: 4
+
+# Model Exponential Moving Average
+model-ema: False  # 是否使用指数移动平均
+model-ema-decay: 0.9998  # EMA的衰减率
+
+# Misc
+seed: 42  # 随机种子
+amp: True  # 是否使用自动混合精度
+channels-last: False  # 数据格式
+batch_size: 16  # 训练时的批量大小
+val_batch_size: 16  # 验证时的批量大小
+lr: 2e-3  # 学习率
+min_lr: 1e-5  # 最小学习率
+sched: cosine  # 学习率调度器
+weight_decay: 1e-4  # 权重衰减
+epochs: 100  # 训练周期数
+cooldown_epochs: 10  # 冷却周期数
+warmup_epochs: 10  # 预热周期数
+warmup_lr: 1e-5  # 预热学习率
+opt: lamb  # 优化器
+smoothing: 0.1  # 验证时的平滑系数
+workers: 1  # 工作线程数
+as_rgb: true
+shape_transform: false  
