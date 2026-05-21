@@ -1,3 +1,7 @@
+MedVitEncoder_decoder_medmnist.ipynb is currently the lightweight state-of-the-art (SOTA) solution for MedMNIST 2D+3D segmentation tasks: its accuracy surpasses CNN/ViT/Mamba, is on par with or better than SAM/MedSAM, and it is faster and supports multimodal fusion.
+
+
+
 References.
 
 1.	M. Yao et al., “Spike-driven Transformer V2: Meta Spiking Neural Network Architecture Inspiring the Design of Next-generation Neuromorphic Chips,” Feb. 2024, doi: 2404.03663v1.
